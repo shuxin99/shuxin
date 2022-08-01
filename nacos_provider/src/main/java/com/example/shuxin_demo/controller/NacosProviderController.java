@@ -1,12 +1,17 @@
 package com.example.shuxin_demo.controller;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.function.Consumer;
 
 /**
@@ -15,6 +20,7 @@ import java.util.function.Consumer;
  * @date: 2022/6/24 16:06
  */
 @RestController
+@Slf4j
 @RequestMapping("/provider")
 public class NacosProviderController {
 
@@ -25,8 +31,17 @@ public class NacosProviderController {
     String port;
 
     @GetMapping(value = "/test/{num}")
-    public String getTestData(@PathVariable("num") String num) {
-        return appName + ":" + port + "provider测试数据num=" + num;
+    public String getTestData(@PathVariable("num") String num, HttpServletResponse response) {
+
+//        try {
+////            response.getWriter().write("nacos示例生产者========");   用这个就报错。。。
+//            String s = "nacos示例生产者========";
+//            ServletOutputStream outputStream = response.getOutputStream();
+//            outputStream.write(s.getBytes(StandardCharsets.UTF_8));
+//        } catch (IOException e) {
+//            log.error("nacos生产者出异常了",e);
+//        }
+        return appName + ":" + port + "provider测试数据num=" + num+"=========================================";
     }
 
 

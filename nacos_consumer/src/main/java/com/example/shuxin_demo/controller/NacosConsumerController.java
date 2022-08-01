@@ -26,19 +26,20 @@ public class NacosConsumerController {
 
     @GetMapping("/test/{number}")
     public String testProvider(@PathVariable("number") String number) {
-
+        //localhost:8001    加了@LoadBalanced注解，找不到，不加可以正常使用
         return restTemplate.getForObject("http://localhost:8001/provider/test/" + number, String.class);
     }
 
     @GetMapping("/test2/{number}")
     public String testProvider2(@PathVariable("number") String number) {
+        //使用@LoadBalance  可以找到，不加找不到，提示未知主机
         return restTemplate.getForObject("http://nacos-provider/provider/test/" + number, String.class);
     }
 
 
     @GetMapping("/test3/{number}")
     public String testProvider3(@PathVariable("number") String number) {
-
+        //feigin
         return openfeign.invokeNacosProviderTestValue(number);
 
     }
