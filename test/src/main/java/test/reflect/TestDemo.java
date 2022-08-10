@@ -15,6 +15,7 @@ public class TestDemo {
         list.add("2");
         list.add("3");
 
+
         List<String> arrayList = new ArrayList<>();
         arrayList.add("5");
         arrayList.addAll(list);
