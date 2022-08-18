@@ -1,0 +1,9 @@
+
+server:
+  port: 10086
+  servlet:
+    context-path: /corsCase
+
+spring:
+  application:
+    name: cors_case

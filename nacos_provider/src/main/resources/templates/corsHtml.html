@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟CORS跨域</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div style="text-align: center;margin-top: 100px;font-size: 60px;color: brown">
+    <button id="sendAjaxRequest" onclick="sendAjaxRequest()">发送Ajax请求不带参--简单请求</button>
+    <button  onclick="sendAjaxRequest2()">发送Ajax请求带json--复杂请求</button>
+</div>
+
+<script type="text/javascript">
+    // $("#sendAjaxRequest").click(function (){
+    //     alert(111)
+    // })
+    function sendAjaxRequest() {
+        // alert("111")
+        $.ajax({
+            type: "post",
+            url: "http://localhost:10086/corsCase/cors/withoutParameter",
+            success: function (message){
+                console.log("成功!" + message)
+            },
+            error: function (a,b,c){
+                console.log("失败!"+ a + ":" + b +":" + c)
+            }
+        })
+
+    }
+
+    function sendAjaxRequest2() {
+        // alert("111")
+        $.ajax({
+            type: "post",
+            data: {name:"褚二蛋",age: 12},
+            url: "http://localhost:10086/corsCase/cors/withParameter",
+            success: function (message){
+                console.log("成功!" + message)
+            },
+            error: function (a,b,c){
+                console.log("失败!"+ a + ":" + b +":" + c)
+            }
+        })
+
+    }
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

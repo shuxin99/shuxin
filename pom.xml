@@ -32,6 +32,7 @@
         <module>nacos_consumer</module>
         <module>nacos_config</module>
         <module>test</module>
+        <module>cors_case</module>
     </modules>
 
     <dependencyManagement>
