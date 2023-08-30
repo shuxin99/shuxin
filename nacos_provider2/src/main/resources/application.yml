@@ -1,10 +1,10 @@
 server:
-  port: 8001
+  port: 8002
 
 #服务应用名
 spring:
   application:
-    name: nacos-provider
+    name: nacos-provider2
 
   #nacos-server地址
   cloud:
@@ -12,3 +12,7 @@ spring:
       discovery:
 #        server-addr: 114.115.157.249:8848
         server-addr: localhost:8848
+        #不填默认服务应用名
+        service: nacos-provider
+        #不填默认为
+        group: DEFAULT_GROUP

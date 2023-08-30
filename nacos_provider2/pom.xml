@@ -10,28 +10,26 @@
 
     <packaging>war</packaging>
 
-    <artifactId>nacos_config</artifactId>
+
+    <artifactId>nacos_provider2</artifactId>
     <version>0.0.1</version>
-    <name>nacos_config</name>
+    <name>nacos_provider2</name>
+
 
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
-<!--            <version>0.9.0.RELEASE</version>-->
-<!--        </dependency>-->
-        <!--   注意groupId的-->
+        <!--    nacos    -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

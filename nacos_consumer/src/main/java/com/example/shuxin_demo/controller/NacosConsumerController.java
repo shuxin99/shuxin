@@ -1,5 +1,6 @@
 package com.example.shuxin_demo.controller;
 
+import com.example.shuxin_demo.entity.TestClassEntity;
 import com.example.shuxin_demo.feign.IOpenfeignTestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,15 @@ public class NacosConsumerController {
     @Autowired
     private IOpenfeignTestController openfeign;
 
+//    private String string;
+//
+//    @Value("${testString}")
+//    public void setString(String string) {
+//        this.string = string;
+//    }
+
+    @Autowired
+    private TestClassEntity entity;
 
     @GetMapping("/test/{number}")
     public String testProvider(@PathVariable("number") String number) {
@@ -42,6 +52,19 @@ public class NacosConsumerController {
         //feigin
         return openfeign.invokeNacosProviderTestValue(number);
 
+    }
+
+
+    @GetMapping("/test4")
+    public String testProvider3() {
+        //feigin
+        return entity.getTestString();
+
+    }
+
+    public static void main(String[] args) {
+        String s = "hello world";
+        System.out.println(s += 'a');
     }
 
 }

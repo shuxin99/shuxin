@@ -5,20 +5,11 @@ spring:
   application:
     name: nacos-config
 
-  #激活环境    如果没有配置激活环境,下面下划线和后面都会被去掉  -${spring.profiles.active}
-  profiles:
-    active: dev
-
-#${prefix}-${spring.profiles.active}.${file-extension}   DataId  其实就是配置文件名
-
   cloud:
     nacos:
+      #配置中心
       config:
-         #配置文件的前缀名
-        prefix: ${spring.application.name}   #不配这个默认也是应用名
-
-        server-addr: 114.115.157.249:8848
-        #配置内容的数据格式
-        file-extension: yaml  #目前只支持properties 和 yaml
-
-
+        server-addr: localhost:8848
+#        namespace: f0d7a388-e6d4-447f-a91f-d4b95aa31bf7
+        file-extension: yaml
+        namespace: f0d7a388-e6d4-447f-a91f-d4b95aa31bf7

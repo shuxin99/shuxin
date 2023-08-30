@@ -9,7 +9,7 @@ import org.springframework.web.filter.CorsFilter;
 /**
  * 应用跨域处理
  */
-@Configuration
+//@Configuration
 public class CORSConfiguration {
 
     @Bean
@@ -19,8 +19,8 @@ public class CORSConfiguration {
         /*是否允许请求带有验证信息*/
         corsConfiguration.setAllowCredentials(true);
         /*允许访问的客户端域名*/
-//        corsConfiguration.addAllowedOrigin("*");   这里不能配通配符*
-        corsConfiguration.addAllowedOriginPattern("*");
+//        corsConfiguration.addAllowedOrigin("*");   //低版本
+        corsConfiguration.addAllowedOriginPattern("*");   //高版本
         /*允许服务端访问的客户端请求头*/
         corsConfiguration.addAllowedHeader("*");
         /*允许访问的方法名,GET POST等*/

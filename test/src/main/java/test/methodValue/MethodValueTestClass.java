@@ -40,7 +40,7 @@ public class MethodValueTestClass {
 
         //3.实体类
         System.out.println("实体类:");
-        Student student = new Student("小强", "22", "男");
+        Student student = new Student("小强", "22", "男",33.66);
         changeEntity(student);
         System.out.println("student.name = " + student.getName());
     }

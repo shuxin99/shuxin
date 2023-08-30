@@ -29,10 +29,12 @@
 
     <modules>
         <module>nacos_provider</module>
+        <module>nacos_provider2</module>
         <module>nacos_consumer</module>
         <module>nacos_config</module>
         <module>test</module>
         <module>cors_case</module>
+        <module>concurrent</module>
     </modules>
 
     <dependencyManagement>
@@ -46,7 +48,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
